@@ -66,9 +66,9 @@ namespace WebApiPrueba.DataBaseAccess
             {
                 using (SqlCommand cmd = new SqlCommand("spUSUSelObtenerUsuarios", Conn))
                 {
-                    cmd.Parameters.AddWithValue("@USUnombreUsuario", null);
-                    cmd.Parameters.AddWithValue("@USUtipoIdentificacion", null);
-                    cmd.Parameters.AddWithValue("@USUidentificacion", null);
+                    cmd.Parameters.AddWithValue("@USUnombreUsuario", user);
+                    cmd.Parameters.AddWithValue("@USUtipoIdentificacion", tipo);
+                    cmd.Parameters.AddWithValue("@USUidentificacion", doc);
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 

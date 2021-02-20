@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using WebApiPrueba.Models;
-using webapi_csharp.Repo;
+using WebApiPrueba.Repo;
 using System;
-using Microsoft.AspNetCore.Http;
 
-namespace webapi_csharp.Controllers
+namespace WebApiPrueba.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

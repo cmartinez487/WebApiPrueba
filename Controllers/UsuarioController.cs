@@ -51,19 +51,16 @@ namespace WebApiPrueba.Controllers
         }
 
         // GET: api/<UsuarioController> 
-        [HttpGet("{user},{tipo},{doc}")]
-        public IActionResult Get(string user, string tipo, string doc)
+        [HttpGet]
+        public IActionResult Get([FromQuery] string user, [FromQuery] string tipo, [FromQuery] string doc)
         {
             try
             {
-
                 List<Usuario> Usuarios = DaoUser.ConsultaUsuarios(user, tipo, doc);
 
                 if (Usuarios == null)
                 {
-                    //404
-                    var nf = NotFound("La consulta no arrojo resultado");
-                    return nf;
+                    return NotFound("La consulta no arrojo resultado");
                 }
                 else
                 {

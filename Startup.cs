@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApiPrueba.DataBaseAccess;
+using WebApiPrueba.Repo;
 
 namespace WebApiPrueba
 {
@@ -30,6 +31,8 @@ namespace WebApiPrueba
 
             services.AddControllers();
             services.AddSingleton<IDaoUsuario, DaoUsuario>();
+            services.AddSingleton<IRepoRoulette, RepoRoulette>();
+            services.AddSingleton<IRPClientes, RPClientes>();
 
             services.AddSwaggerGen(c =>
             {
